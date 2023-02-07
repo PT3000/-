@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="notice_board.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <style>
+        td {
+            text-align: left !important;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="wrap">
+        <h3 class="make">게시글 작성</h3>
+        <form method="post" action="/board">
+        	<input type="hidden" value="board_write">
+            <table>
+                <tr>
+                    <th>제목</th>
+                    <td><input type="text" name="title"></td>
+                </tr>
+                <tr>
+                    <th>작성자</th>
+                    <td><input type="text" name="writer"></td>
+                </tr>
+                <tr>
+                    <th>내용</th>
+                    <td><textarea cols="100" rows="30" name="content"></textarea></td>
+                </tr>
+            </table>
+            <!--<input class="btn" type="submit" value="등록">
+            <input class="btn" type="reset" value="다시작성하기">-->  <!--submit 을 써야 post 방식으로 보낼 수 있음-->
+            <button style="margin-left:34px" onClick="location.href='/board'" type="submit" class="btn btn-dark">등록</button>
+            <button style="margin-left:34px" type="button" class="btn btn-dark">다시작성</button>
+            <button style="margin-left:34px" type="button" class="btn btn-dark">취소</button>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>   
+</body>
+</html>
